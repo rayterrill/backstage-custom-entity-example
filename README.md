@@ -32,15 +32,17 @@ You must have a Backstage app built with `npx @backstage/create-app`
         - allow: [Component, System, API, Resource, Location, Customer]
     ```
 5. To test out your entity, create a new instance of our customer entity by modifying examples/entities.yaml, and adding the following to the bottom:
-```
----
-apiVersion: myexample.com/v1beta3
-kind: Customer
-metadata:
-  name: test-customer
-spec:
-  owner: guests
-```
+    ```
+    ---
+    apiVersion: myexample.com/v1beta3
+    kind: Customer
+    metadata:
+    name: test-customer
+    spec:
+    owner: guests
+    ```
 6. Fire up Backstage `yarn dev`
+
+### Testing
 
 At this point, assuming everything worked correctly, you should be able to see your new Customer entity, as well as your test customer in the list, by choosing the "Customer" Kind on the catalog homepage.
