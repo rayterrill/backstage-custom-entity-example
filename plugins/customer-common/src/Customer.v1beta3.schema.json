@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "CustomerV1beta3",
+  "description": "An example of a customer",
+  "examples": [
+    {
+      "apiVersion": "myexample.com/v1beta3",
+      "kind": "Customer",
+      "metadata": {
+        "name": "example customer"
+      },
+      "spec": {
+        "owner": "someone"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "Entity"
+    },
+    {
+      "type": "object",
+      "required": ["spec"],
+      "properties": {
+        "apiVersion": {
+          "enum": ["myexample.com/v1beta3"]
+        },
+        "kind": {
+          "enum": ["Customer"]
+        },
+        "spec": {
+          "type": "object",
+          "required": ["owner"],
+          "properties": {
+            "owner": {
+              "type": "string",
+              "description": "The user (or group) owner of the template",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  ]
+}
